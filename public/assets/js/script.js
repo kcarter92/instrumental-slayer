@@ -25,12 +25,29 @@ var soundTag = ["./audio/09Mirrors.m4a",
 
 
 
-
+alert("linked");
 
 $(document).ready(function(){
+    $(".eq").hide();
     $(".songlist li").click(function(){
       var ID = $(this).attr('id');
       alert(soundTag[ID]);
-      // $("#songlist").hide();
+      $(".songlist").hide();
+      $(".eq").show();
+      $(".songtitle").hide();
+      $("#button").hide();
+
+  // ability buttons
+  $(".ability-button").on("click", function(event) {
+    var userId = user.id -1;
+    var enemyId = enemy.id -1;
+    var attackName = $(this).name;
+    alert("clicked the ability button");
+  });
+
+
+
+
+
     });
     });

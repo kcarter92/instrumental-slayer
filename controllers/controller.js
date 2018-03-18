@@ -11,7 +11,6 @@ var Character = require('../public/assets/js/Character.js');
 
 // router.param('userId', function(req, res, next, ))
 
-
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   //console.log(db.Char);
@@ -53,6 +52,8 @@ router.get("/battle/:userId&:enemyId", function(req, res) {
       enemy: data[enemyChar]
 
     };
+
+    // var scripts = [{ script: './assets/js/battle.js'}]
     return res.render("battle", charObject);
   });
 });
@@ -173,10 +174,10 @@ router.post("/", function(req, res) {
 
   db.Char.create(
     [
-    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "hp", "macxhp","physical", "magic", "speed", "defense", "alive", "songUrl", "imageSRC" 
-    ], 
+    "name", "charClass", "tempo", "songLength", "beats", "charXP", "charLevel", "hp", "macxhp","physical", "magic", "speed", "defense", "alive", "songUrl", "imageSRC"
+    ],
     [
-    req.body.name, 
+    req.body.name,
     req.body.charClass,
     req.body.tempo,
     req.body.songLength,
@@ -192,7 +193,7 @@ router.post("/", function(req, res) {
     req.body.alive,
     req.body.songUrl,
     req.body.imageSRC,
-  ], 
+  ],
   function() {
     res.redirect("/");
   });
